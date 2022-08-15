@@ -336,7 +336,7 @@ $ kubectl -n kurly apply -f deploy/11.mutator-deployment-svc.yaml
 
 
 
-<img src="README.assets/image-20220815205835039.png" alt="image-20220815205835039" style="zoom:150%;" />
+<img src="README.assets/image-20220815205835039.png" alt="image-20220815205835039" style="zoom: 200%;" />
 
 
 
@@ -394,6 +394,12 @@ $ cat deploy/12.mutate-webhook-configuration.yaml | sed "s/{{CA_PEM_BASE64}}/$CA
 
 ```
 
+<img src="README.assets/image-20220815210000800.png" alt="image-20220815210000800" style="zoom:200%;" />
+
+
+
+
+
 
 
 
@@ -426,7 +432,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: abcd/nginx    # kurlycorp.kr.dev/nginx
+      - image: abcd/nginx:latest    # kurlycorp.kr.dev/nginx
         name: nginx
         ports:
         - containerPort: 8080
@@ -443,6 +449,10 @@ spec:
 $ kubectl -n kurly apply -f deploy/13.nginx-deployment.yaml
 
 ```
+
+<img src="README.assets/image-20220815210417727.png" alt="image-20220815210417727" style="zoom:200%;" />
+
+
 
 
 

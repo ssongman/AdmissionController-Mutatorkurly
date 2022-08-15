@@ -654,3 +654,15 @@ $ kubectl delete MutatingWebhookConfiguration webhook-mwc
 $ kubectl -n kurly delete secret mutator-certs
 
 ```
+
+
+
+
+
+
+
+# 별첨. K8s Cluster Setup ( [가이드 문서 보기](./ktcloud-setup/ktcloud-setup.md) )  
+
+## KTCloud에 k3s 용도 VM 생성
+
+## k3s Cluster 설치

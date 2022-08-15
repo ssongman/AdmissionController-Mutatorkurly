@@ -336,6 +336,10 @@ $ kubectl -n kurly apply -f deploy/11.mutator-deployment-svc.yaml
 
 
 
+<img src="README.assets/image-20220815205835039.png" alt="image-20220815205835039" style="zoom:150%;" />
+
+
+
 
 
 

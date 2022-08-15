@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mutator
+  labels:
+    app: mutator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mutator
+  template:
+    metadata:
+      labels:
+        app: mutator
+    spec:
+      containers:
+      - name: mutator
+        image: ssongman/k8s-admission-controller-mutatorkurly:v0.52
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+          name: flask
+        volumeMounts:
+        - name: webhook-tls
+          mountPath: /run/secrets/tls
+          readOnly: true
+      volumes:
+      - name: webhook-tls
+        secret:
+          secretName: mutator-certs
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mutator
+spec:
+  selector:
+    app: mutator
+  ports:
+    - port: 443
+      targetPort: flask

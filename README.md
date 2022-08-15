@@ -647,12 +647,16 @@ kurlycorp.kr.dev/nginx:latest
 
 ```bash
 
-$ kubectl -n kurly delete pod alice-nginx
+$ kubectl -n kurly delete deployment nginx
+
 $ kubectl -n kurly delete deployment mutator
 $ kubectl -n kurly delete svc mutator
+
 $ kubectl delete MutatingWebhookConfiguration webhook-mwc
+
 $ kubectl -n kurly delete secret mutator-certs
 
+$ kubectl delete ns kurly
 ```
 
 
